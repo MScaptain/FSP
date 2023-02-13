@@ -1,14 +1,14 @@
 const express = require('express')
-const bodyparser = require('body-parser')
 const cors = require('cors')
 const morgan = require('morgan')
-
+const bodyParser = require('body-parser')
 const app = express()
 // app.use(morgan('combined'))
 app.use(cors())
-app.use(bodyparser.json())
-app.get('/status',(req,res)=>{
-    res.send("hii")
+app.use(bodyParser.json())
+app.post('/register',(req,res)=>{
+    console.log(req.body.email)
+    res.send(req.body.email)
 })
-console.log("server start")
+console.log('server start')
 app.listen(process.env.PORT||8000)
