@@ -11,19 +11,17 @@ export default{
     mounted(){
         setTimeout(() => {
             this.email="hii"
+            this.password="pass"
         }, 3000);
     },
     methods: {
         async register(){
-            const response =  await authenticationservise.register({
-                email:this.email,
+           await authenticationservise.register({
                 password:this.password,
+                email:this.email,
             })
-            
-            const data = response.data;
 
-            console.log(data);
-       
+            
         }
     }
 
@@ -41,7 +39,7 @@ export default{
     />
     <br/>
     <input
-    type="password"
+    type="text"
     name="password"
     v-model = "password"
     placeholder="password"
