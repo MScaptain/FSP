@@ -20,6 +20,7 @@ export default{
                 password:this.password,
                 email:this.email,
             })
+            
 
             
         }

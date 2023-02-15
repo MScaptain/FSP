@@ -7,7 +7,7 @@ module.exports={
         options:{
             dialect: 'postgres',
             host: process.env.HOST ||'localhost',
-            // storage:'./test-db.postgres'
+            storage:'./testdb.postgres'
         }
     }
 }  //connection not working

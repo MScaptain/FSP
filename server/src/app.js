@@ -6,6 +6,7 @@ const app = express()
 const sequelize = require('./models')
 const config = require('./config/config')
 
+
 require('dotenv').config()
 console.log(process.env)
 
@@ -15,7 +16,10 @@ app.use(bodyParser.json())
 require('./routes')(app)
 console.log('server start')
 
-// sequelize.sync().then(()=>app.listen(config.port))
-console.log('server started on port')
-console.log(config.port)
-app.listen(process.env.PORT||8000)
+// sequelize.sync({ force: true }).then(() => {
+//     app.listen(config.port, () => {
+//       console.log(`Server started on port ${config.port}`);
+//     });
+//   });
+  
+app.listen(8000)
