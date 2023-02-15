@@ -1,13 +1,13 @@
 module.exports={
-    port: 8081,
+    port: process.env.PORT || 8081,
     db:{
-        database: process.env.DB_NAME || 'tbdb',
-        user:process.env.DB_USER || 'tbdb',
+        database: process.env.DB_NAME || 'testdb',
+        user: process.env.DB_USER || 'postgres',
         password:process.env.DB_PASSWORD || 'tbdb',
         options:{
-            dialect: process.env.DIALECT||'sqlite',
-            host: process.env.HOST||'localhost',
-            storage:'./tbdb.sqlite'
+            dialect: 'postgres',
+            host: process.env.HOST ||'localhost',
+            // storage:'./test-db.postgres'
         }
     }
-}   
+}  //connection not working
